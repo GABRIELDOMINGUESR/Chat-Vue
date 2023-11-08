@@ -1,7 +1,12 @@
 <template>
   <div style="height: 100vh">
-    <!-- Botão flutuante para abrir a sala de bate-papo -->
-    <button @click="toggleChat" class="ce-new-chat-button" v-if="!chatVisible">Abrir Sala de Bate-Papo</button>
+    <!-- Botão flutuante para abrir a sala de bate-papo com ícone -->
+    <label for="abrir"><img class="ce-new-chat-button" src="../img/chat-icon.png" alt=""></label>
+
+    <button @click="toggleChat" class="ce-new-chat-button" id="abrir" v-if="!chatVisible" hidden>
+      
+      <i class="fas fa-comments" ></i> 
+    </button>
     
     <!-- Sala de bate-papo visível somente se chatVisible for verdadeiro -->
     <PrettyChatWindow
@@ -22,6 +27,7 @@
   position: fixed;
   bottom: 22px;
   right: 22px; /* Posição flutuante no canto inferior direito */
+
 }
 
 .ce-back-button {
