@@ -1,11 +1,12 @@
 <template>
   <div style="height: 100vh">
     <!-- Botão flutuante para abrir a sala de bate-papo com ícone -->
-    <label for="abrir"><img class="chat-button" src="../img/chat-icon-branco.png" alt=""></label>
+    <label for="abrir">
+      <img class="ce-new-chat-button" v-if="!chatVisible" src="../img/chat-icon.png" alt="">
+    </label>
 
-    <button @click="toggleChat" class="chat-button" id="abrir" v-if="!chatVisible" hidden>
-      
-      <i class="fas fa-comments" ></i> 
+    <button @click="toggleChat" class="ce-new-chat-button" id="abrir" v-if="!chatVisible" hidden>
+      <i class="fas fa-comments"></i> 
     </button>
     
     <!-- Sala de bate-papo visível somente se chatVisible for verdadeiro -->
@@ -14,29 +15,30 @@
       :projectId="projectId"
       :username="username"
       :secret="secret"
+      @closeChat="handleChatClose"
     />
 
     <!-- Botão "Voltar" no canto inferior esquerdo -->
-    <button @click="goBack" class="back-button" v-if="chatVisible">Voltar</button>
+    <button @click="goBack" class="ce-back-button" v-if="chatVisible">Voltar</button>
   </div>
 </template>
 
 <style>
-.chat-button {
+.ce-new-chat-button {
   width: 60px;
   position: fixed;
   bottom: 22px;
   right: 22px; 
   color: black;
   /* Posição flutuante no canto inferior direito */
-
 }
 
-.back-button {
-  width: 32px;
+.ce-back-button {
+  width: 55px;
   position: fixed;
   bottom: 22px;
-  left: 22px; /* Posição flutuante no canto inferior esquerdo */
+  left: 22px;
+   /* Posição flutuante no canto inferior esquerdo */
 }
 </style>
 
@@ -70,6 +72,9 @@ export default {
     },
     goBack() {
       this.chatVisible = false; // Oculta a sala de bate-papo ao voltar
+    },
+    handleChatClose() {
+      this.chatVisible = false;
     },
   },
 };
