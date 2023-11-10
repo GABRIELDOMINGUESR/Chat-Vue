@@ -15,3 +15,12 @@ This template should help get you started developing with Vue 3 in Vite. The tem
     Não esqueça de adicionar o .env.local na rais do projeto
     com as chaves de acesso do Chat Engine
     
+
+# Comandos npm de intalação
+
+    npm install
+    npm install axios react-chat-engine-pretty veaury
+
+
+# Para rodar o projeto utilizar o comando
+    npm run dev

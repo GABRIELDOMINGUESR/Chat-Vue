@@ -1,9 +1,9 @@
 <template>
   <div style="height: 100vh">
     <!-- Botão flutuante para abrir a sala de bate-papo com ícone -->
-    <label for="abrir"><img class="ce-new-chat-button" src="../img/chat-icon.png" alt=""></label>
+    <label for="abrir"><img class="chat-button" src="../img/chat-icon-branco.png" alt=""></label>
 
-    <button @click="toggleChat" class="ce-new-chat-button" id="abrir" v-if="!chatVisible" hidden>
+    <button @click="toggleChat" class="chat-button" id="abrir" v-if="!chatVisible" hidden>
       
       <i class="fas fa-comments" ></i> 
     </button>
@@ -17,20 +17,22 @@
     />
 
     <!-- Botão "Voltar" no canto inferior esquerdo -->
-    <button @click="goBack" class="ce-back-button" v-if="chatVisible">Voltar</button>
+    <button @click="goBack" class="back-button" v-if="chatVisible">Voltar</button>
   </div>
 </template>
 
 <style>
-.ce-new-chat-button {
-  width: 32px;
+.chat-button {
+  width: 60px;
   position: fixed;
   bottom: 22px;
-  right: 22px; /* Posição flutuante no canto inferior direito */
+  right: 22px; 
+  color: black;
+  /* Posição flutuante no canto inferior direito */
 
 }
 
-.ce-back-button {
+.back-button {
   width: 32px;
   position: fixed;
   bottom: 22px;
