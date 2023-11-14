@@ -24,3 +24,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 # Para rodar o projeto utilizar o comando
     npm run dev
+
+
+# Link do chat engine 
+https://blog.chatengine.io/fullstack-chat/vue-serverless Site com o tutorial de criação do chat pelo engine
